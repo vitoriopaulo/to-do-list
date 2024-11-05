@@ -35,7 +35,7 @@ document.getElementById('signin-form').addEventListener('submit', function(event
 document.getElementById('logout-button').addEventListener('click', function() {
     currentUser = null;
     toggleAuth(true); // Switch back to authentication
-    showMessage("Logged out successfully!");
+    showMessage("Logged out successfully!"); // Feedback message
     clearTasks();
 });
 
@@ -70,8 +70,8 @@ document.getElementById('dark-mode-toggle').addEventListener('click', function()
     document.body.classList.toggle('dark-mode');
 });
 
-// Onboarding
-document.getElementById('start-btn').addEventListener('click', function() {
+// Onboarding (removed as per your request)
+document.getElementById('start-btn')?.addEventListener('click', function() {
     document.getElementById('onboarding').classList.add('hidden');
     document.getElementById('todo-container').classList.remove('hidden');
 });
@@ -94,9 +94,7 @@ function toggleAuth(isAuth) {
     document.getElementById('auth').classList.toggle('hidden', !isAuth);
     document.getElementById('todo-container').classList.toggle('hidden', isAuth);
     if (isAuth) {
-        document.getElementById('onboarding').classList.remove('hidden');
-    } else {
-        document.getElementById('onboarding').classList.add('hidden');
+        loadTasks(); // Load tasks when returning to the login screen
     }
 }
 
@@ -105,6 +103,14 @@ function initializeTodoApp() {
 }
 
 function addTask(task, dueDate, priority, category) {
+    const tasks = loadTasksFromStorage();
+    tasks.push({ task, dueDate, priority, category });
+    localStorage.setItem(currentUser + '-tasks', JSON.stringify(tasks)); // Store tasks in local storage
+
+    renderTask(task, dueDate, priority, category);
+}
+
+function renderTask(task, dueDate, priority, category) {
     const li = document.createElement('li');
     li.innerHTML = `
         <span>${task} - Due: ${dueDate} - Priority: ${priority} - Category: ${category}</span>
@@ -155,5 +161,13 @@ function clearTasks() {
 }
 
 function loadTasks() {
-    // In a real app, load tasks from a database or storage
+    const tasks = loadTasksFromStorage();
+    tasks.forEach(({ task, dueDate, priority, category }) => {
+        renderTask(task, dueDate, priority, category);
+    });
+}
+
+function loadTasksFromStorage() {
+    const tasks = localStorage.getItem(currentUser + '-tasks');
+    return tasks ? JSON.parse(tasks) : []; // Return an empty array if no tasks exist
 }

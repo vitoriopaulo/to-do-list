@@ -1,18 +1,18 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Raleway', sans-serif;
+    background-color: #353535; /* Dark grey background */
+    color: white; /* Default text color */
     margin: 0;
     padding: 20px;
-    transition: background-color 0.3s, color 0.3s;
 }
 
 .container {
     max-width: 400px;
     margin: auto;
-    background: white;
+    background: black; /* Black background for app content */
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
 h1 {
@@ -30,15 +30,22 @@ form {
 }
 
 input, select {
-    margin: 10px 0;
+    margin: 10px 0; /* Space between fields */
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
+    background-color: black; /* Keep the background black */
+    color: white; /* White text for input fields */
+    border: 1px solid white; /* White border */
+    border-radius: 3px; /* Rounded corners */
+}
+
+input:focus {
+    outline: none; /* Remove outline */
+    border-color: green; /* Change border color on focus */
 }
 
 button {
     padding: 10px;
-    background-color: #5cb85c;
+    background-color: green; /* Standard green color for buttons */
     color: white;
     border: none;
     border-radius: 3px;
@@ -52,8 +59,8 @@ button:hover {
 #message {
     text-align: center;
     margin-top: 20px;
-    color: green;
-    background-color: #d4edda;
+    color: green; /* Change feedback message color to green */
+    background-color: rgba(0, 128, 0, 0.1); /* Light green background */
     border: 1px solid #c3e6cb;
     padding: 10px;
     border-radius: 5px;
@@ -75,7 +82,7 @@ button:hover {
 
 #task-list li {
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid white; /* White border for tasks */
     margin: 5px 0;
     display: flex;
     flex-direction: column;
@@ -88,13 +95,13 @@ button:hover {
 }
 
 #task-list button {
-    background-color: #d9534f;
+    background-color: green; /* Green color for Edit and Delete buttons */
     width: 100%;
     margin-top: 5px;
 }
 
 #task-list button:hover {
-    background-color: #c9302c;
+    background-color: #4cae4c;
 }
 
 .dark-mode {
@@ -102,9 +109,29 @@ button:hover {
     color: white;
 }
 
-#search-input {
+.search-container {
+    display: flex;
+    align-items: center;
     margin: 10px 0;
+}
+
+#search-input {
+    flex: 1;
+    margin-right: 5px;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
+    background-color: black; /* Dark gray background for search input */
+    color: white; /* White text for search input */
+    border: 1px solid white; /* White border for the search input */
+    border-radius: 3px; /* Rounded corners */
+}
+
+.search-icon {
+    cursor: pointer;
+    color: white;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    color: white;
 }

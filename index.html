@@ -5,17 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do List App</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <h1>To-do List</h1>
-
-        <!-- User Onboarding -->
-        <div id="onboarding" class="hidden">
-            <h2>Welcome to the To-Do List App!</h2>
-            <p>Manage your tasks efficiently. Start by adding your tasks below!</p>
-            <button id="start-btn">Start Using the App</button>
-        </div>
 
         <div id="auth">
             <form id="signup-form">
@@ -36,7 +30,12 @@
         <div id="todo-container" class="hidden">
             <button id="logout-button">Log Out</button>
             <h2>Your Tasks</h2>
-            <input type="text" id="search-input" placeholder="Search Tasks" />
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search Tasks" />
+                <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" width="24px" height="24px">
+                    <path d="M10 2a8 8 0 1 0 5.29 14.71l5.3 5.3a1 1 0 0 0 1.41-1.41l-5.3-5.3A8 8 0 0 0 10 2zm0 14a6 6 0 1 1 0-12 6 6 0 0 1 0 12z"/>
+                </svg>
+            </div>
             <form id="task-form">
                 <input type="text" id="task-input" placeholder="New Task" required>
                 <input type="date" id="task-due-date" placeholder="Due Date">
@@ -50,8 +49,11 @@
             </form>
             <ul id="task-list"></ul>
             <div id="message" class="hidden"></div>
-            <button id="dark-mode-toggle" class="hidden">Toggle Dark Mode</button>
         </div>
+        
+        <footer>
+            <p>Made with <span class="fa fa-heart" style="color:red;">❤️</span> by Vitorio Paulo</p>
+        </footer>
     </div>
     <script src="script.js"></script>
 </body>

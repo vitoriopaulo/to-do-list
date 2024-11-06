@@ -2,7 +2,7 @@
 
 ## Overview
 
-Introducing the **Straightforward To-Do List Web App**—a simple yet effective tool for managing tasks efficiently. This front-end web application is designed with privacy in mind, storing all data locally on the user's device.
+Introducing the **Straightforward To-Do List Web App**—a simple yet effective tool for managing tasks efficiently. This front-end web application is designed with privacy in mind, storing all data locally on the user's device. Furthermore, the app is developed with the issues of accessibility and inclusiveness in mind, focusing also on people with disabilities.
 
 ## Technology Stack
 

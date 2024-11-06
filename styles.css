@@ -30,12 +30,17 @@ form {
 }
 
 input, select {
-    margin: 10px 0; /* Space between fields */
+    margin: 15px 0; /* Increased space between fields */
     padding: 10px;
     background-color: black; /* Keep the background black */
     color: white; /* White text for input fields */
     border: 1px solid white; /* White border */
     border-radius: 3px; /* Rounded corners */
+}
+
+input::placeholder, 
+select {
+    color: white; /* White placeholder text */
 }
 
 input:focus {
@@ -59,10 +64,9 @@ button:hover {
 #message {
     text-align: center;
     margin-top: 20px;
-    color: green; /* Change feedback message color to green */
-    background-color: rgba(0, 128, 0, 0.1); /* Light green background */
-    border: 1px solid #c3e6cb;
-    padding: 10px;
+    color: white; /* Change feedback message text color to white */
+    background-color: green; /* Solid green background for feedback messages */
+    padding: 15px; /* Increased padding for a larger rectangle */
     border-radius: 5px;
     position: fixed;
     top: 50%;
@@ -128,6 +132,17 @@ button:hover {
 .search-icon {
     cursor: pointer;
     color: white;
+}
+
+.date-container {
+    display: flex;
+    align-items: center;
+}
+
+.calendar-icon {
+    margin-left: 5px;
+    cursor: pointer;
+    color: white; /* White color for the calendar icon */
 }
 
 footer {

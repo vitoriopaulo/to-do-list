@@ -34,6 +34,8 @@ document.getElementById('signin-form').addEventListener('submit', function(event
 
 document.getElementById('logout-button').addEventListener('click', function() {
     currentUser = null;
+    document.getElementById('signin-email').value = ''; // Clear email field
+    document.getElementById('signin-password').value = ''; // Clear password field
     toggleAuth(true); // Switch back to authentication
     showMessage("Logged out successfully!"); // Feedback message
     clearTasks();
@@ -79,8 +81,9 @@ document.getElementById('start-btn')?.addEventListener('click', function() {
 function showMessage(message, color = "green") {
     const messageDiv = document.getElementById('message');
     messageDiv.textContent = message;
-    messageDiv.style.color = color;
+    messageDiv.style.color = "white"; // Ensure the feedback message text is white
     messageDiv.classList.remove('hidden');
+    messageDiv.style.backgroundColor = color === "green" ? "green" : "red"; // Set background based on message type
     setTimeout(() => {
         messageDiv.classList.add('hidden');
     }, 4000);
